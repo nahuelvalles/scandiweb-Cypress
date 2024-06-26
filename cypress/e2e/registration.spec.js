@@ -14,14 +14,4 @@ describe('Registration page scenario mapping', () => {
         registrationPage.verifyRegistration()
         
     })
-
-    it('login', function(){
-        const loginPage = new LoginPage()
-
-        cy.visit('/')
-        cy.contains('a', 'Sign In').should('be.visible').click()
-        cy.contains('h1', 'Customer Login').should('be.visible')
-        loginPage.fillLoginForm()
-    })
-
 })

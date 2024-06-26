@@ -9,11 +9,11 @@ class RegistrationPage{
         
         const validUser = registrationData.validData.user1
 
-        const firstname = Cypress.env('firstname') || 'DefaultFirstName'
-        const lastname = Cypress.env('lastname') || 'DefaultLastName'
-        const email = Cypress.env('email') || 'default.email@example.com'
-        const password = Cypress.env('password') || 'DefaultPassword123'
-        const passConfirm = Cypress.env('passConfirm') || 'DefaultPassword123'
+        const firstname = Cypress.env('firstname') || validUser.firstname
+        const lastname = Cypress.env('lastname') || validUser.lastname
+        const email = Cypress.env('email') || validUser.email
+        const password = Cypress.env('password') || validUser.password
+        const passConfirm = Cypress.env('passConfirm') || validUser.passConfirm
 
         cy.get('[title="First Name"]').type(firstname)
         cy.get('#lastname').type(lastname)

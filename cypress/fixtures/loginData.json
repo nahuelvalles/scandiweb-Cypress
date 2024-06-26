@@ -9,8 +9,8 @@
     },
     "wrongPwdData":{
         "user1": {
-            "email" : "newUser@example.com",
-            "password": "123"
+            "email" : "doesntexist@examp.com",
+            "password": "Password123"
         }
     }
 }

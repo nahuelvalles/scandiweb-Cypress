@@ -9,7 +9,7 @@ class LoginPage{
         cy.contains('h1', 'Customer Login').should('be.visible')
     }
 
-    
+    //fill out login form
     fillLoginForm(){
 
         let validUser = loginData.validData.user1
@@ -18,14 +18,22 @@ class LoginPage{
         cy.get('input[name="login[password]"]').type(validUser.password)
     }
 
+    //click on submit button
     submitLoginForm(){
         cy.get('#send2').click()
     }
 
+    //validates that after loggin in, the user is actually logged in.
     userLoggedInValidation(){
         let validUser = loginData.validData.user1
         cy.contains('.logged-in', 'Welcome, '+ validUser.firstname + ' ' + validUser.lastname + '!')
         .should('be.visible')
     }
+
+    //Validates that an error message is displayed when login process fails
+    errorMessageValidation(){
+        cy.get('#message-error').should('be.visible')
+    }
+
 }
 export default LoginPage;

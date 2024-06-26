@@ -12,4 +12,10 @@ describe('Login page specs', () => {
         loginPage.userLoggedInValidation()
         
     })
+
+    it('Validates error message display when authentication fail', function(){
+        loginPage.navigateToLoginPage()
+        loginPage.fillLoginForm()
+        loginPage.submitLoginForm()
+    })
 })

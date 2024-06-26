@@ -1,0 +1,20 @@
+{
+  "validData": {
+    "user1": {
+      "firstname": "Jhon",
+      "lastname": "Doe",
+      "email": "newUser@example.com",
+      "password": "Password123",
+      "passConfirm":"Password123"
+    }
+  },
+  "shortPwdData": {
+    "user1": {
+      "firstname": "Nick",
+      "lastname": "James",
+      "email": "userjk@example.com",
+      "password": "Ps1",
+      "passConfirm":"Ps1"
+    }
+  }
+}

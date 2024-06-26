@@ -1,0 +1,16 @@
+{
+    "validData": {
+        "user1": {
+            "email": "newUser@example.com",
+            "password": "Password123",
+            "firstname": "Jhon",
+            "lastname": "Doe"
+        }
+    },
+    "wrongPwdData":{
+        "user1": {
+            "email" : "newUser@example.com",
+            "password": "123"
+        }
+    }
+}

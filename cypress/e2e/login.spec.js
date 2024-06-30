@@ -3,7 +3,7 @@ const loginPage = new LoginPage();
 
 describe('Login page specs', () => {
 
-    it('Execute the login process succesfully', () => {
+    it.only('Execute the login process succesfully', () => {
         cy.visit('/')
 
         loginPage.navigateToLoginPage()

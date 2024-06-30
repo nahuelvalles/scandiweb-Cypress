@@ -11,11 +11,10 @@ class LoginPage{
 
     //fill out login form
     fillLoginForm(){
-
-        let validUser = loginData.validData.user1
-
-        cy.get('input[name="login[username]"]').type(validUser.email)
-        cy.get('input[name="login[password]"]').type(validUser.password)
+        cy.getLoginData().then(loginData => {
+            cy.get('input[name="login[username]"]').type(loginData.email)
+            cy.get('input[name="login[password]"]').type(loginData.password)
+        })
     }
 
     //click on submit button

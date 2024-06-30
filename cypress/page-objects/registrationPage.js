@@ -7,20 +7,13 @@ class RegistrationPage{
     //Fill out Registration form with valid credentials
     fillRegistrationForm(){
         
-        const validUser = registrationData.validData.user1
-
-        const firstname = Cypress.env('firstname') || validUser.firstname
-        const lastname = Cypress.env('lastname') || validUser.lastname
-        const email = Cypress.env('email') || validUser.email
-        const password = Cypress.env('password') || validUser.password
-        const passConfirm = Cypress.env('passConfirm') || validUser.passConfirm
-
-        cy.get('[title="First Name"]').type(firstname)
-        cy.get('#lastname').type(lastname)
-        cy.get('[autocomplete="email"]').type(email)
-        cy.get('#password').type(password)
-        cy.get('#password-confirmation').type(passConfirm)
-        
+        cy.getRegistrationData().then((userData)=>{
+            cy.get('[title="First Name"]').type(userData.firstname)
+            cy.get('#lastname').type(userData.lastname)
+            cy.get('[autocomplete="email"]').type(userData.email)
+            cy.get('#password').type(userData.password)
+            cy.get('#password-confirmation').type(userData.passConfirm)
+        })
     }
 
     //Click on submit button of Registration form

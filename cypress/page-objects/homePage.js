@@ -10,5 +10,9 @@ class HomePage{
     clickCreateAccountLink(){
         return cy.get('#idZIwYc3vl').click
     }
+
+    getSearchInput(){
+        return cy.get('#search')
+    }
 }
 export default HomePage;

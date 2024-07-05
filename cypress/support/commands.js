@@ -1,5 +1,6 @@
 import registrationData from '../fixtures/registrationData.json'
 import loginData from '../fixtures/loginData.json'
+import productData from '../fixtures/productData.json'
 
 Cypress.Commands.add('getRegistrationData', function(){
    
@@ -22,3 +23,5 @@ Cypress.Commands.add('getLoginData', function(){
     
     }
 })
+
+

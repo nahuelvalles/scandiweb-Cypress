@@ -1,23 +1,15 @@
-/*
-## Scenario 2: Product Search
-- **Description**: Verify the product search functionality.
-- **Steps**:
-  1. Navigate to the homepage.
-  2. Enter a product name in the search bar.
-  3. Click the search button.
-  4. Verify that the search results are displayed correctly.
-  5. Verify that the listed products match the search term.
-*/
 
 /// <reference types="cypress" />
 import HomePage from "./homePage.js";
+import productData from "../fixtures/productData.json"
 
 const homePage = new HomePage();
 
 class ProductPage{
 
-    searchForProduct(product){
+    searchForProduct(){
 
+        this.getProductData()
         homePage.getSearchInput().type(product)
         cy.get('[type=submit][title="Search"]').click()
         
@@ -32,6 +24,14 @@ class ProductPage{
             .and('include', product)
         }))
     }
+
+    getProductData(){
+        const validProduct = productData.products
+        return {
+            product: Cypress.env('product') || validProduct   
+        }
+    }
+
 }
 
 export default ProductPage;

@@ -1,3 +1,6 @@
 {
-"products"
+    "products"{
+        "hoodie":"hoodie",
+        "backpack": "backpack"
+    }
 }
